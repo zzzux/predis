@@ -314,18 +314,18 @@ class RedisCommandsTestSuite extends PHPUnit_Framework_TestCase {
         $this->assertEquals(1, $this->redis->getbit('binary', 31));
         $this->assertEquals(0, $this->redis->getbit('binary', 63));
 
-        RC::testForServerException($this, RC::EXCEPTION_BIT_OFFSET, function($test) {
-            $test->redis->getbit('binary', -1);
-        });
+        RC::testForServerException($this, RC::EXCEPTION_BIT_OFFSET, p_anon("\$test", "
+            \$test->redis->getbit('binary', -1);
+        "));
 
-        RC::testForServerException($this, RC::EXCEPTION_BIT_OFFSET, function($test) {
-            $test->redis->getbit('binary', 'invalid');
-        });
+        RC::testForServerException($this, RC::EXCEPTION_BIT_OFFSET, p_anon("\$test", "
+            \$test->redis->getbit('binary', 'invalid');
+        "));
 
-        RC::testForServerException($this, RC::EXCEPTION_WRONG_TYPE, function($test) {
-            $test->redis->rpush('metavars', 'foo');
-            $test->redis->getbit('metavars', 0);
-        });
+        RC::testForServerException($this, RC::EXCEPTION_WRONG_TYPE, p_anon("\$test", "
+            \$test->redis->rpush('metavars', 'foo');
+            \$test->redis->getbit('metavars', 0);
+        "));
     }
 
 
