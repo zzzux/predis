@@ -1,7 +1,7 @@
 {
-    "name": "predis/predis",
+    "name": "zzzux/predis",
     "type": "library",
-    "description": "Flexible and feature-complete Redis client for PHP and HHVM",
+    "description": "Fork of predis/predis for PHP 7.3",
     "keywords": ["nosql", "redis", "predis"],
     "homepage": "http://github.com/nrk/predis",
     "license": "MIT",
